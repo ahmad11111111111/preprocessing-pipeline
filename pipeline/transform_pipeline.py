@@ -141,7 +141,7 @@ class TransformPipeline(Pipeline):
             Typically ndarray of shape (n_samples, n_transformed_features)
             Transformed samples.
         """
-        fit_params_steps = self._check_model_params(**fit_params)
+        fit_params_steps = self.check_model_params(**fit_params)
         Xt, yt = self._fit(X, y, **fit_params_steps)
 
         last_step = self._final_estimator
